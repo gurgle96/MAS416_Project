@@ -179,26 +179,17 @@ TimeResults=[t1 t2 t3];
 
 XResults=[p1X p2X p3X];
 YResults=[p1Y p2Y p3Y];
-ZResults=[p1Z p2Z p3Y];
+ZResults=[p1Z p2Z p3Z];
 
 Results=[t1 t2 t3
         p1X p2X p3X
         p1Y p2Y p3Y
         p1Z p2Z p3Z];
 
-plot3(p1X,p1Y,p1Z);
+plot(TimeResults,XResults);
 hold on;
-plot3(p2X,p2Y,p2Z);
+plot(TimeResults,YResults);
 hold on;
-plot3(p3X,p3Y,p3Z);
+plot(TimeResults,ZResults);
 grid;
-
-% plot3(1600,0,900,'marker', 'x')
-text(1.6,0,0.9,'P1')
-% hold on
-% plot3(2000,500,1600,'marker', 'x')
-text(2,0.5,1.6,'P2')
-% hold on
-% plot3(1600,-500,1600,'marker', 'x')
-text(1.6,-0.5,1.6,'P3')
-% grid on
+legend('X','Y','Z');
