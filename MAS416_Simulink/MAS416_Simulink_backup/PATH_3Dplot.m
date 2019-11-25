@@ -66,9 +66,9 @@ z4dotdot=0;
 
 
 %% Path Generator
-t1=[T0:0.1:T1];
-t2=[T1:0.1:T2];
-t3=[T2:0.1:T3];
+t1=[T0:0.01:T1];
+t2=[T1:0.01:T2];
+t3=[T2:0.01:T3];
 
 Step=0.1;
 Counter=1;
