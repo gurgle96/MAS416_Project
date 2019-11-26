@@ -1,73 +1,74 @@
-close all;
-clear all;
-clc;
+clc
+clear all
+close all
 
-%Coordinates
+%% Coordinates
 P1=[1.6 0 0.9];
 P2=[2 0.5 1.6];
 P3=[1.6 -0.5 1.6];
 P4=[1.6 0 0.9];
-
-%% P1
-x1=1.6;
-x1dot=0;
-x1dotdot=0;
-
-y1=0;
-y1dot=0;
-y1dotdot=0;
-
-z1=0.9;
-z1dot=0;
-z1dotdot=0;
-
-%% P2
-x2=2;
-x2dot=0.1;
-x2dotdot=0.010;
-
-y2=0.500;
-y2dot=0.010;
-y2dotdot=0.010;
-
-z2=1.6;
-z2dot=0.010;
-z2dotdot=0.010;
-
-%% P3
-x3=1.6;
-x3dot=0.1;
-x3dotdot=0;
-
-y3=-0.5;
-y3dot=0.1;
-y3dotdot=0;
-
-z3=1.6;
-z3dot=0.1;
-z3dotdot=0;
-
-%% P4
-x4=1.6;
-x4dot=0;
-x4dotdot=0;
-
-y4=0;
-y4dot=0;
-y4dotdot=0;
-
-z4=0.9;
-z4dot=0;
-z4dotdot=0;
-%Time
 T0=0;
 T1=1;
 T2=2;
 T3=3;
+
+%% P1
+x1=P1(1);
+x1dot=0;
+x1dotdot=0;
+
+y1=P1(2);
+y1dot=0;
+y1dotdot=0;
+
+z1=P1(3);
+z1dot=0;
+z1dotdot=0;
+
+%% P2
+x2=P2(1);
+x2dot=0.5;
+x2dotdot=0.010;
+
+y2=P2(2);
+y2dot=0.010;
+y2dotdot=0.010;
+
+z2=P2(3);
+z2dot=0.010;
+z2dotdot=0.010;
+
+%% P3
+x3=P3(1);
+x3dot=-0.55;
+x3dotdot=0;
+
+y3=P3(2);
+y3dot=0.05;
+y3dotdot=0;
+
+z3=P3(3);
+z3dot=-0.55;
+z3dotdot=0;
+
+%% P4
+x4=P4(1);
+x4dot=0;
+x4dotdot=0;
+
+y4=P4(2);
+y4dot=0;
+y4dotdot=0;
+
+z4=P4(3);
+z4dot=0;
+z4dotdot=0;
+
+
 %% Path Generator
-t1=[T0:0.1:T1];
-t2=[T1:0.1:T2];
-t3=[T2:0.1:T3];
+t1=[T0:0.01:T1];
+t2=[T1:0.01:T2];
+t3=[T2:0.01:T3];
 
 Step=0.1;
 Counter=1;
@@ -90,6 +91,7 @@ X3=[x3
     x4
     x4dot
     x4dotdot];
+
 
 Y1=[y1
     y1dot
@@ -185,16 +187,22 @@ Results=[t1 t2 t3
         p1X p2X p3X
         p1Y p2Y p3Y
         p1Z p2Z p3Z];
-
-plot(TimeResults,XResults);
-hold on;
-plot(TimeResults,YResults);
-hold on;
-plot(TimeResults,ZResults);
-grid;
-legend('X','Y','Z');
-
+    
 plot3(p1X,p1Y,p1Z);
 hold on;
 plot3(p2X,p2Y,p2Z);
+plot3(p3X,p3Y,p3Z);
 grid;
+xlabel('x')
+ylabel('y')
+zlabel('z')
+
+% plot3(1600,0,900,'marker', 'x')
+text(1.6,0,0.9,'P1')
+% hold on
+% plot3(2000,500,1600,'marker', 'x')
+text(2,0.5,1.6,'P2')
+% hold on
+% plot3(1600,-500,1600,'marker', 'x')
+text(1.6,-0.5,1.6,'P3')
+% grid on
