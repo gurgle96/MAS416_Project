@@ -66,9 +66,9 @@ z4dotdot=0;
 
 
 %% Path Generator
-t1=[T0:0.001:T1];
-t2=[T1:0.001:T2];
-t3=[T2:0.001:T3];
+t1=[T0:0.01:T1];
+t2=[T1:0.01:T2];
+t3=[T2:0.01:T3];
 
 Step=0.1;
 Counter=1;
@@ -197,12 +197,12 @@ xlabel('x-axis')
 ylabel('y-axis')
 zlabel('z-axis')
 
-plot3(1.6,0,0.9,'black','marker', 'o')
+plot3(1.6,0,0.9,'b','marker', 'o')
 text(1.6,0.1,0.85,'P1')
 hold on
-plot3(2,0.5,1.6,'black','marker', 'o')
+plot3(2,0.5,1.6,'marker', 'o')
 text(2,0.6,1.6,'P2')
 hold on
-plot3(1.6,-0.5,1.6,'black','marker', 'o')
+plot3(1.6,-0.5,1.6,'marker', 'o')
 text(1.6,-0.55,1.6,'P3')
 grid on
